@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url(/static/Images/img.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .header {
+            color: red;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+            background-color: aliceblue;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: rgba(135, 206, 235, 0.7); /* Transparent blue with 50% opacity */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .fighter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fighter-details {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .fighter-details h2, .fighter-details h1 {
+            font-size: xx-large;
+        }
+
+        .fighter-details h2 {
+            color: blue;
+        }
+
+        .fighter-details h1 {
+            color: red;
+        }
+
+        .fighter-details label {
+            color: black;
+            font-weight: 600;
+        }
+
+        .fighter-details input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .predict-button {
+            text-align: center;
+        }
+
+        .predict-button input {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        UFC Fight
+    </div>
+    <div class="container">
+        
+        <div class="form-container">
+            <form action="/predict" method="post">
+                <div class="fighter-container">
+                    <div class="fighter-details">
+                        <h2>Blue Fighter</h2>
+                        <label for="B_Age">Age</label>
+                        <input type="int" name="B_Age">
+                        <label for="B_Height">Height</label>
+                        <input type="int" name="B_Height">
+                        <label for="B_Weight">Weight</label>
+                        <input type="int" name="B_Weight">
+                        <label for="BPrev">Previous Matches</label>
+                        <input type="int" name="BPrev">
+                        <label for="winby">Winby [SUB:1 DEC:2 KO/TKO:3]</label>
+                        <input type="int" name="winby">
+                    </div>
+
+                    <div class="fighter-details">
+                        <h1>Red Fighter</h1>
+                        <label for="R_Age">Age</label>
+                        <input type="int" name="R_Age">
+                        <label for="R_Height">Height</label>
+                        <input type="int" name="R_Height">
+                        <label for="R_Weight">Weight</label>
+                        <input type="int" name="R_Weight">
+                        <label for="RPrev">Red Previous</label>
+                        <input type="text" name="RPrev">
+                        <label for="winby">Winby [SUB:1 DEC:2 KO/TKO:3]</label>
+                        <input type="int" name="w">
+                    </div>
+                </div>
+
+                <div class="predict-button">
+                    <input type="submit" value="Predict">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
